@@ -13,8 +13,6 @@ const ContainerSticks = styled.section`
   padding-left: 100px;
 `;
 
-
-
 const Banner = styled.section`
   .container-right-image {
     img {
@@ -55,7 +53,7 @@ const Banner = styled.section`
 `;
 
 const FirstSection = styled.section`
-  margin-top: 100px;
+  margin-top: 50px;
   padding-top:30px;
   h1 {
     text-align: center;
@@ -1370,20 +1368,6 @@ export default function Home() {
     setCobre(CobreArray);
     setFibraTv(FibraTvArray);
     setTvType(0);
-
-
-    (function(d, w, c) {
-      w.ChatraID = 'jusepAZRtZW2BTSbY';
-      var s = d.createElement('script');
-      w[c] = w[c] || function() {
-          (w[c].q = w[c].q || []).push(arguments);
-      };
-      s.async = true;
-      s.src = 'https://call.chatra.io/chatra.js';
-      if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-
-
   }, []);
 
   const changeStract = (stractValue) => {
@@ -1452,111 +1436,7 @@ export default function Home() {
             </div>
           </div>
         </Banner>
-        <FirstSection className="container grid-xl" name="fibra_internet_telefonia" id="fibra_internet_telefonia">
-          <h1>
-            <span className="orange">Internet y </span>
-            <span className="blue">Telefonía</span> FIBRA ÓPTICA
-          </h1>
-          <div className="columns">
-            <div className="col-12">
-              <div className="selectorStract">
-                <div className="btn-group">
-                  <button
-                    className={
-                      stract == "1-4" ? "btn btn-sm active" : "btn btn-sm"
-                    }
-                    onClick={() => {
-                      changeStract("1-4");
-                    }}
-                  >
-                    Estrato 1 - 4
-                  </button>
-                  <button
-                    className={
-                      stract == "5-6" ? " btn btn-sm active" : "btn btn-sm"
-                    }
-                    onClick={() => {
-                      changeStract("5-6");
-                    }}
-                  >
-                    Estrato 5 - 6
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-12">
-              <Slider {...settings}>
-                {fibra.map((item, key) => (
-                  <CardPorperty item={item} key={key} stract={stract} />
-                ))}
-              </Slider>
-            </div>
-          </div>
-        </FirstSection>
-
-        <FirstSection className="container grid-xl" name="cobre_internet_telefonia" id="cobre_internet_telefonia">
-          <h1>
-            <span className="orange">Internet y </span>
-            <span className="blue">Telefonía</span> COBRE
-          </h1>
-          <div className="columns">
-            <div className="col-12 col-xs-12">
-              <div className="selectorStract">
-                <div className="btn-group">
-                  <button
-                    className={
-                      stractC == "C1-2" ? "btn btn-sm active" : "btn btn-sm"
-                    }
-                    onClick={() => {
-                      changeStractC("C1-2");
-                    }}
-                  >
-                    Estrato 1 - 2
-                  </button>
-                  <button
-                    className={
-                      stractC == "C3" ? "btn btn-sm active" : "btn btn-sm"
-                    }
-                    onClick={() => {
-                      changeStractC("C3");
-                    }}
-                  >
-                    Estrato 3
-                  </button>
-
-                  <button
-                    className={
-                      stractC == "C4" ? "btn btn-sm active" : "btn btn-sm"
-                    }
-                    onClick={() => {
-                      changeStractC("C4");
-                    }}
-                  >
-                    Estrato 4
-                  </button>
-                  <button
-                    className={
-                      stractC == "C5-6" ? " btn btn-sm active" : "btn btn-sm"
-                    }
-                    onClick={() => {
-                      changeStractC("C5-6");
-                    }}
-                  >
-                    Estrato 5 - 6
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-xs-12">
-              <Slider {...settings}>
-                {cobre.map((item, key) => (
-                  <CardPorperty item={item} key={key} stract={stractC} />
-                ))}
-              </Slider>
-            </div>
-          </div>
-        </FirstSection>
-
+     
         <FirstSection className="container grid-xl" name="fibra_internet_telefonia_tv" id="fibra_internet_telefonia_tv">
           <h1>
             Television, <span className="orange">Internet y </span>
@@ -1627,52 +1507,60 @@ export default function Home() {
             </div>
             {tvType == 1 ? (
               <div className="col-12">
-                <Slider {...settings}>
+                <div className="columns">
                   {fibraTv.map((item, key) =>
                     item.plan == "silver" ? (
+                        <div className="col-4 col-xs-12">
                       <CardPropertyTv
                         item={item}
                         key={key}
                         stract={stractTv}
                         plan="silver"
                       />
+                      </div>
                     ) : null
                   )}
-                </Slider>
+                </div>
               </div>
             ) : null}
 
             {tvType == 0 ? (
               <div className="col-12">
-                <Slider {...settings}>
+                <div className="columns">
                   {fibraTv.map((item, key) =>
                     item.plan == "bronze" ? (
+                        <div className="col-4 col-xs-12">
                       <CardPropertyTv
                         item={item}
                         key={key}
                         stract={stractTv}
                         plan="bronze"
                       />
+                      </div>
                     ) : null
                   )}
-                </Slider>
+                </div>
               </div>
             ) : null}
 
             {tvType == 2 ? (
               <div className="col-12">
-                <Slider {...settings}>
+                <div className="columns">
                   {fibraTv.map((item, key) =>
                     item.plan == "gold" ? (
+                        <div className="col-4 col-xs-12">
+
+                        
                       <CardPropertyTv
                         item={item}
                         key={key}
                         stract={stractTv}
                         plan="gold"
                       />
+                      </div>
                     ) : null
                   )}
-                </Slider>
+                </div>
               </div>
             ) : null}
           </div>
@@ -1683,4 +1571,3 @@ export default function Home() {
     </>
   );
 }
-  
